@@ -8,12 +8,14 @@ provider:
   environment:
     db_url: ${self:custom.databaseConnectionString}
     db_name: ${self:custom.databaseName}
+    collectionName: ${self:custom.collectionName}
 
 custom:
   service: api
   profile: profilename
   databaseConnectionString: mongoURL
   databaseName: name
+  collectionName: name
 
 functions:
   create:

@@ -4,6 +4,7 @@ const mongoClient = mongo.MongoClient
 
 const dbUrl = process.env.db_url
 const dbName = process.env.db_name
+const collectionName = process.env.collectionName
 
 const dbConnect = (cb) => {
   mongoClient.connect(dbUrl, (err, database) => {
@@ -20,4 +21,5 @@ const dbConnect = (cb) => {
 module.exports = {
   dbConnect,
   objectId: mongo.ObjectID,
+  collectionName
 };
