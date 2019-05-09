@@ -1,0 +1,29 @@
+{
+  "name": "apiservice",
+  "version": "1.0.0",
+  "description": "NodeJS based API Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avinduhewa/NodeJS-Serverless-CRUD-API.git"
+  },
+  "keywords": [
+    "nodeJS",
+    "AWS",
+    "Serverless",
+    "API"
+  ],
+  "author": "Avindu Hewa",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.6.1",
+    "mongodb": "^3.1.1"
+  },
+  "bugs": {
+    "url": "https://github.com/avinduhewa/NodeJS-Serverless-CRUD-API/issues"
+  },
+  "homepage": "https://github.com/avinduhewa/NodeJS-Serverless-CRUD-API#readme"
+}
