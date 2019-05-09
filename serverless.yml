@@ -1,0 +1,58 @@
+service: ${self:custom.service}
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: ap-southeast-1
+  profile: ${self:custom.profile}
+  environment:
+    db_url: ${self:custom.databaseConnectionString}
+    db_name: ${self:custom.databaseName}
+
+custom:
+  service: api
+  profile: profilename
+  databaseConnectionString: mongoURL
+  databaseName: name
+
+functions:
+  create:
+    handler: src/create/index.create
+    events:
+      # Uncomment below line to enable function pinging to keep lambda in hotstate
+      # - schedule: rate(2 minutes)
+      - http:
+          path: ${self:custom.service}
+          method: PUT
+  getAll:
+    handler: src/get/index.getAll
+    events:
+      # Uncomment below line to enable function pinging to keep lambda in hotstate
+      # - schedule: rate(2 minutes)
+      - http:
+          path: ${self:custom.service}
+          method: GET
+  get:
+    handler: src/get/index.get
+    events:
+      # Uncomment below line to enable function pinging to keep lambda in hotstate
+      # - schedule: rate(2 minutes)
+      - http:
+          path: ${self:custom.service}/{filter}
+          method: GET
+  update:
+    handler: src/update/index.update
+    events:
+      # Uncomment below line to enable function pinging to keep lambda in hotstate
+      # - schedule: rate(2 minutes)
+      - http:
+          path: ${self:custom.service}
+          method: POST
+  delete:
+    handler: src/delete/index.delete
+    events:
+      # Uncomment below line to enable function pinging to keep lambda in hotstate
+      # - schedule: rate(2 minutes)
+      - http:
+          path: ${self:custom.service}
+          method: DELETE
