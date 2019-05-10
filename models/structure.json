@@ -1,15 +1,23 @@
 {
   "name": {
-    "type": "string"
+    "type": "string",
+    "validation": ".*"
   },
   "email": {
-    "type": "string"
+    "type": "string",
+    "validation": ".*"
   },
   "photos": {
-    "type": "array",
+    "type": "objectArray",
     "model": {
-      "url": "string",
-      "rating": "number"
+      "url": {
+        "type": "string",
+        "validation": ".*"
+      },
+      "rating": {
+        "type": "string",
+        "validation": ".*"
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 'use strict';
-const util = require('../../shared/index');
+const util = require('../../helper/index');
 const async = require('async');
 
 let shared = {}; // commonly shared data object
